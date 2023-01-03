@@ -27,4 +27,11 @@ onMounted(() => {
 	align-items: center;
 	gap: 100px;
 }
+html {
+	margin: 0;
+}
+body {
+	background-color: #f0effb;
+	margin: 0px;
+}
 </style>
