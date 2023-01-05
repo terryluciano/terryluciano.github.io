@@ -1,8 +1,8 @@
 <template>
 	<NavBar />
 	<HomeView />
-	<ProjectView />
 	<SkillsView />
+	<ProjectView />
 </template>
 
 <script setup>
@@ -13,7 +13,9 @@ import ProjectView from './views/ProjectsView.vue';
 import SkillsView from './views/SkillsView.vue';
 
 onMounted(() => {
-	console.log('Hello');
+	console.log(
+		'Hello! Thank you for checking out my portfolio! If you have any questions please email me at terryluciano1@gmail.com'
+	);
 });
 </script>
 

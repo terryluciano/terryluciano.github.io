@@ -1,19 +1,19 @@
-<script setup></script>
+<script setup>
+import HomeBubble from '../components/HomeBubble.vue';
+</script>
 
 <template>
 	<div id="home">
-		<div class="profile-picture">
+		<HomeBubble v-for="index in 5" :key="index" :bID="index" />
+		<div class="profile-picture front-index">
 			<img src="@/assets/profilePH.png" />
 		</div>
-		<div class="home-bio">
+		<div class="home-bio front-index">
 			<div class="home-bio-title">
 				<h1>Hey, I’m Terrence Luciano</h1>
 				<h2>A Backend focused Full-Stack Web Developer</h2>
 			</div>
-			<p class="home-bio-quote">
-				"Just a broke college student who can program better than most
-				college students."
-			</p>
+			<p class="home-bio-quote">"quote goes here"</p>
 			<p class="home-bio-description">
 				I am a Full-Stack Web Developer from Northern New Jersey with 3+
 				years of experience building web applications. I primarily focus
@@ -32,12 +32,19 @@
 	height: 100vh;
 	background: #8a84e2;
 	display: flex;
+	position: relative;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
 	font-family: 'Nunito Sans', sans-serif;
+	overflow: hidden;
 }
+
+.front-index {
+	z-index: 1;
+}
+
 .profile-picture {
 	display: block;
 	padding: 20px;

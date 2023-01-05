@@ -1,3 +1,31 @@
 {
-	"hello": 1
+	"projects": [
+		{
+			"projetcImage": "",
+			"projectName": "HEAT",
+			"company": "Rutgers Data Science Consulting",
+			"yearStart": "2022",
+			"yearEnd": "2022",
+			"position": "Computer Science Project Lead",
+			"description": "",
+			"github": "",
+			"externalLink": ""
+		}
+	],
+	"skills": {
+		"backend": ["Python", "Node.js", "Express.js", "Django", "Socket.io"],
+		"frontend": ["JavaScript", "HTML5", "CSS3", "Vue.js", "React"],
+		"database": ["MongoDB", "MySQL"],
+		"other": [
+			"Figma",
+			"Git",
+			"Bash",
+			"Arduino",
+			"C/C++",
+			"C#",
+			"Unity",
+			"React Native",
+			"Heroku"
+		]
+	}
 }

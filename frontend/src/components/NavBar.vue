@@ -17,6 +17,7 @@ export default {
 
 <style>
 nav {
+	z-index: 2;
 	position: fixed;
 	width: 100%;
 	background-color: #8a84e2;
