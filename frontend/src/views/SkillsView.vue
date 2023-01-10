@@ -145,8 +145,15 @@ const otherSkills = [
 				/>
 			</div>
 
-			<div v-else>
-				<div></div>
+			<div
+				style="
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				"
+				v-else
+			>
+				<div class="loading-circle"></div>
 			</div>
 		</Transition>
 	</div>
@@ -194,5 +201,20 @@ const otherSkills = [
 	align-items: center;
 	gap: 10px;
 	flex-wrap: wrap;
+}
+
+/* Loading Circle */
+.loading-circle {
+}
+
+/* Transition animation */
+.v-enter-active,
+.v-leave-active {
+	transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+	opacity: 0;
 }
 </style>
