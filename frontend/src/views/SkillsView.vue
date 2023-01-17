@@ -1,34 +1,18 @@
 <script setup>
 import SectionTitle from '../components/SectionTitle.vue';
 import SkillCard from '../components/SkillCard.vue';
-import axios from 'axios';
 import { ref } from '@vue/reactivity';
 import { useElementBounding } from '@vueuse/core';
+import { useSkillsStore } from '@/stores/index.js';
+
+const skillsStore = useSkillsStore();
+skillsStore.fetchSkills();
+console.log(skillsStore.skills.backend);
 
 let backendInView = false;
 let frontendInView = false;
 let databaseInView = false;
 let otherInView = false;
-let dataReceive = ref(false);
-
-const hostURL =
-	process.env.NODE_ENV === 'production'
-		? 'https://www.terrenceluciano.com'
-		: 'http://localhost:4000';
-
-function getSkills() {
-	const apiFetchURL = hostURL + '/api/skills';
-	axios
-		.get(apiFetchURL)
-		.then((res) => {
-			console.log(res.data);
-		})
-		.catch((err) => {
-			console.error(err);
-		});
-}
-
-getSkills();
 
 const backendCards = ref(null);
 const frontendCards = ref(null);
@@ -66,26 +50,6 @@ function checkInView() {
 window.requestAnimationFrame(checkInView);
 
 const sectionTitle = 'Skills';
-const backendSkills = [
-	'Python',
-	'Node.js',
-	'Express.js',
-	'Django',
-	'Socket.io',
-];
-const frontendSkills = ['JavaScript', 'HTML5', 'CSS3', 'Vue.js', 'React'];
-const databaseSkills = ['MongoDB', 'MySQL'];
-const otherSkills = [
-	'Figma',
-	'Git',
-	'Bash',
-	'Arduino',
-	'C/C++',
-	'C#',
-	'Unity',
-	'React Native',
-	'Heroku',
-];
 </script>
 
 <template>
@@ -93,7 +57,7 @@ const otherSkills = [
 		<SectionTitle :title="sectionTitle" />
 
 		<Transition>
-			<div class="skills-section" v-if="dataRecieved">
+			<div class="skills-section" v-if="skillsStore.skillsRecieved">
 				<div class="skill-cards" ref="skillCards">
 					<h4
 						class="skill-card-title"
@@ -104,7 +68,7 @@ const otherSkills = [
 					</h4>
 					<div class="card-container">
 						<SkillCard
-							v-for="skill in backendSkills"
+							v-for="skill in skillsStore.skills.backend"
 							:key="skill"
 							:skill="skill"
 						/>
@@ -114,7 +78,7 @@ const otherSkills = [
 					</h4>
 					<div class="card-container">
 						<SkillCard
-							v-for="skill in frontendSkills"
+							v-for="skill in skillsStore.skills.frontend"
 							:key="skill"
 							:skill="skill"
 						/>
@@ -124,7 +88,7 @@ const otherSkills = [
 					</h4>
 					<div class="card-container">
 						<SkillCard
-							v-for="skill in databaseSkills"
+							v-for="skill in skillsStore.skills.database"
 							:key="skill"
 							:skill="skill"
 						/>
@@ -132,7 +96,7 @@ const otherSkills = [
 					<h4 class="skill-card-title" ref="otherCards">Other</h4>
 					<div class="card-container">
 						<SkillCard
-							v-for="skill in otherSkills"
+							v-for="skill in skillsStore.skills.other"
 							:key="skill"
 							:skill="skill"
 						/>
