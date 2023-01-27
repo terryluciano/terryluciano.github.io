@@ -1,184 +1,124 @@
 <script setup>
-import SectionTitle from '../components/SectionTitle.vue';
-import SkillCard from '../components/SkillCard.vue';
-import { ref } from '@vue/reactivity';
-import { useElementBounding } from '@vueuse/core';
-import { useSkillsStore } from '@/stores/index.js';
+import SectionTitle from '../components/SectionTitle.vue'
+import SkillSection from '../components/SkillSection.vue'
+import { ref } from '@vue/reactivity'
+import { useSkillsStore } from '@/stores/index.js'
 
-const skillsStore = useSkillsStore();
-skillsStore.fetchSkills();
-console.log(skillsStore.skills.backend);
+const skillsStore = useSkillsStore()
+skillsStore.fetchSkills()
 
-let backendInView = false;
-let frontendInView = false;
-let databaseInView = false;
-let otherInView = false;
+const backendCards = ref(null)
+const frontendCards = ref(null)
+const databaseCards = ref(null)
+const otherCards = ref(null)
 
-const backendCards = ref(null);
-const frontendCards = ref(null);
-const databaseCards = ref(null);
-const otherCards = ref(null);
-
-function checkInView() {
-	const backendPosition = useElementBounding(backendCards);
-	const frontendPosition = useElementBounding(frontendCards);
-	const databasePosition = useElementBounding(databaseCards);
-	const otherPosition = useElementBounding(otherCards);
-
-	if (backendPosition.bottom.value - window.visualViewport.height <= 0) {
-		backendInView = true;
-	}
-	if (frontendPosition.bottom.value - window.visualViewport.height <= 0) {
-		frontendInView = true;
-	}
-	if (databasePosition.bottom.value - window.visualViewport.height <= 0) {
-		databaseInView = true;
-	}
-	if (otherPosition.bottom.value - window.visualViewport.height <= 0) {
-		otherInView = true;
-	}
-	if (
-		backendInView == false ||
-		frontendInView == false ||
-		databaseInView == false ||
-		otherInView == false
-	) {
-		window.requestAnimationFrame(checkInView);
-	}
-}
-
-window.requestAnimationFrame(checkInView);
-
-const sectionTitle = 'Skills';
+const sectionTitle = 'Skills'
 </script>
 
 <template>
-	<div id="skills">
-		<SectionTitle :title="sectionTitle" />
+  <div id="skills">
+    <SectionTitle :title="sectionTitle" />
 
-		<Transition>
-			<div class="skills-section" v-if="skillsStore.skillsRecieved">
-				<div class="skill-cards" ref="skillCards">
-					<h4
-						class="skill-card-title"
-						ref="backendCards"
-						v-if="backendInView"
-					>
-						Backend
-					</h4>
-					<div class="card-container">
-						<SkillCard
-							v-for="skill in skillsStore.skills.backend"
-							:key="skill"
-							:skill="skill"
-						/>
-					</div>
-					<h4 class="skill-card-title" ref="frontendCards">
-						Frontend
-					</h4>
-					<div class="card-container">
-						<SkillCard
-							v-for="skill in skillsStore.skills.frontend"
-							:key="skill"
-							:skill="skill"
-						/>
-					</div>
-					<h4 class="skill-card-title" ref="databaseCards">
-						Databases
-					</h4>
-					<div class="card-container">
-						<SkillCard
-							v-for="skill in skillsStore.skills.database"
-							:key="skill"
-							:skill="skill"
-						/>
-					</div>
-					<h4 class="skill-card-title" ref="otherCards">Other</h4>
-					<div class="card-container">
-						<SkillCard
-							v-for="skill in skillsStore.skills.other"
-							:key="skill"
-							:skill="skill"
-						/>
-					</div>
-				</div>
+    <Transition>
+      <div class="skills-section" v-if="skillsStore.skillsRecieved">
+        <div class="skill-cards" ref="skillCards">
+          <SkillSection
+            ref="backendCards"
+            :skillTitle="'Backend'"
+            :skills="skillsStore.skills.backend"
+          />
+          <SkillSection
+            ref="frontendCards"
+            :skillTitle="'Frontend'"
+            :skills="skillsStore.skills.frontend"
+          />
+          <SkillSection
+            ref="databaseCards"
+            :skillTitle="'Databases'"
+            :skills="skillsStore.skills.database"
+          />
+          <SkillSection
+            ref="otherCards"
+            :skillTitle="'Other'"
+            :skills="skillsStore.skills.other"
+          />
+        </div>
 
-				<img
-					id="skills-picture"
-					src="@/assets/grapy-coder-workplace.png"
-				/>
-			</div>
-
-			<div
-				style="
-					display: flex;
-					justify-content: center;
-					align-items: center;
-				"
-				v-else
-			>
-				<div class="loading-circle"></div>
-			</div>
-		</Transition>
-	</div>
+        <img id="skills-picture" src="@/assets/4380744.png" />
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <style>
 #skills {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 20px;
 }
 
 #skills-picture {
-	width: 512px;
-	height: 444px;
+  width: 512px;
 }
 
 .skills-section {
-	display: flex;
-	flex-direction: row;
-	gap: 20px;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .skill-cards {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	gap: 20px;
-	max-width: 512px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 512px;
 }
 
 .skill-card-title {
-	font-family: 'Nunito Sans', sans-serif;
-	font-size: 2em;
-	margin: 0px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2em;
+  margin: 0px;
 }
 
 .card-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-	gap: 10px;
-	flex-wrap: wrap;
-}
-
-/* Loading Circle */
-.loading-circle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 /* Transition animation */
 .v-enter-active,
 .v-leave-active {
-	transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .v-enter-from,
 .v-leave-to {
-	opacity: 0;
+  opacity: 0;
+}
+
+@media screen and (max-width: 1100px) {
+  #skills-picture {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .skill-card-title {
+    align-self: center;
+  }
+  .card-container {
+    justify-content: center;
+  }
+  .skill-section-div {
+    align-items: center;
+  }
 }
 </style>

@@ -1,98 +1,97 @@
 <script setup>
-import { onBeforeMount, ref, defineProps } from '@vue/runtime-core';
+import { ref, onBeforeMount } from '@vue/runtime-core';
 
-const props = defineProps({
-	bID: String,
-});
+const bubbleID = ref(null);
+const randomSpeed = Math.random() * 5 + 10;
 
-console.log(props.bID);
-
-let clientHeight = ref(window.visualViewport.height);
-let clientWdith = ref(window.visualViewport.width);
-
-let TopPercent;
-let LeftPercent;
-
-/*
-function setSpeed() {}
-
-function startDirection() {}
-*/
-
-/**
- * @param {string} startPoint
- */
-
-function randomDirection(startPoint) {
-	let wallArray = ['u', 'd', 'l', 'r'];
-
-	// r == right
-	if (startPoint == 'u') {
-		wallArray.splice(wallArray.indexOf('u'), 1);
-	} else if (startPoint == 'd') {
-		wallArray.splice(wallArray.indexOf('d'), 1);
-	} else if (startPoint == 'l') {
-		wallArray.splice(wallArray.indexOf('l'), 1);
-	} else {
-		wallArray.splice(wallArray.indexOf('r'), 1);
-	}
-
-	const randomWall = Math.floor(Math.random() * wallArray.length);
-	return wallArray[randomWall];
-}
-
-/**
- * @param {string} currentLeft
- * @param {string} currentTop
- */
-
-const randomNewEndPoint = (currentTop, currentLeft) => {
-	const left = parseFloat(currentLeft.replace('%', ''));
-	const top = parseFloat(currentTop.replace('%', ''));
-
-	let newWall;
-
-	if (left <= 0) {
-		newWall = randomDirection('l');
-	} else if (left >= 100) {
-		newWall = randomDirection('r');
-	} else if (top <= 0) {
-		newWall = randomDirection('u');
-	} else if (top >= 100) {
-		newWall = randomDirection('d');
-	}
-	console.log(newWall);
+const bubbleStyle = {
+	width: '0px',
+	height: '0px',
+	transitionProperty: 'top, left',
+	transitionDuration: '7s',
+	transitionTimingFunction: 'linear',
 };
 
 onBeforeMount(() => {
-	TopPercent =
-		(Math.floor(Math.random() * clientHeight.value) / clientHeight.value) *
-			100 +
-		'%';
-	LeftPercent =
-		(Math.floor(Math.random() * clientWdith.value) / clientWdith.value) *
-			100 +
-		'%';
+	const randomWidthAndHeight = Math.random() * 5 + 1;
 
-	console.log(TopPercent, LeftPercent);
-	randomNewEndPoint(TopPercent, LeftPercent);
+	bubbleStyle.width = randomWidthAndHeight + 'vw';
+	bubbleStyle.height = randomWidthAndHeight + 'vw';
+
+	bubbleStyle.transitionDuration = randomSpeed + 's';
 });
+
+// Random starting point
+const randomX = Math.random() * 100;
+const randomY = Math.random() * 100;
+
+bubbleStyle.top = randomY + '%';
+bubbleStyle.left = randomX + '%';
+
+setTimeout(() => {
+	const randomDirection = Math.random() * 4;
+
+	if (randomDirection < 1) {
+		bubbleID.value.style.top = '100%';
+		bubbleID.value.style.left = randomLeftValue();
+	} else if (randomDirection < 2) {
+		bubbleID.value.style.top = '0%';
+		bubbleID.value.style.left = randomLeftValue();
+	} else if (randomDirection < 3) {
+		bubbleID.value.style.left = '100%';
+		bubbleID.value.style.top = randomTopValue();
+	} else {
+		bubbleID.value.style.left = '0%';
+		bubbleID.value.style.top = randomTopValue();
+	}
+}, 100);
+
+function randomTopValue() {
+	return Math.random() * 100 + '%';
+}
+
+function randomLeftValue() {
+	return Math.random() * 100 + '%';
+}
+
+setInterval(() => {
+	// check current endpoint
+	if (bubbleID.value.style.top === '100%') {
+		bubbleID.value.style.top = '0%';
+		bubbleID.value.style.left = randomLeftValue();
+	} else if (bubbleID.value.style.top === '0%') {
+		bubbleID.value.style.top = '100%';
+		bubbleID.value.style.left = randomLeftValue();
+	} else if (bubbleID.value.style.left === '100%') {
+		bubbleID.value.style.left = '0%';
+		bubbleID.value.style.top = randomTopValue();
+	} else {
+		bubbleID.value.style.left = '100%';
+		bubbleID.value.style.top = randomTopValue();
+	}
+}, randomSpeed * 1000);
 </script>
 
 <template>
-	<div
-		:id="bubbleID"
-		class="home-bubble"
-		:style="{ top: TopPercent, left: LeftPercent }"
-	>
-		Hi
-	</div>
+	<div ref="bubbleID" class="home-bubble" :style="bubbleStyle"></div>
 </template>
 
 <style>
 .home-bubble {
-	background-color: #5349d4;
+	border-style: solid;
+	border-width: 10px;
+	border-color: #5349d4;
 	position: absolute;
 	z-index: 0;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+	.home-bubble {
+		border-width: 5px;
+	}
 }
 </style>

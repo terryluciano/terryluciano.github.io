@@ -1,31 +1,50 @@
 {
 	"projects": [
 		{
-			"projetcImage": "",
-			"projectName": "HEAT",
-			"company": "Rutgers Data Science Consulting",
-			"yearStart": "2022",
-			"yearEnd": "2022",
+			"projectImage": "jji-heat.png",
+			"projectName": "Health Equity Assessment Tool",
+			"companyName": "Rutgers Data Science Consulting",
+			"yearStart": 2022,
+			"yearEnd": 2022,
 			"position": "Computer Science Project Lead",
-			"description": "",
+			"projectDescription": "I worked with Johnson and Johnson Innovations on a grant with Rutgers Data Science Consulting as a Computer Science Project Lead. Our goal was to develop a system for generating survey results in PDF format for innovators who have taken the Health Equity Assessment Tool. My role on the project was to design a mockup of the report, develop the system for generating the personalized reports, and push the new PDF reports to J&J Innovation’s server via SFTP.",
 			"github": "",
-			"externalLink": ""
+			"externalLink": "",
+			"techStack": ["python", "html", "css", "figma"]
+		},
+		{
+			"projectImage": "test-image.jpg",
+			"projectName": "GammaBets",
+			"companyName": "Personal Project",
+			"yearStart": 2021,
+			"yearEnd": 2022,
+			"position": "Lead Developer",
+			"projectDescription": "Cras congue risus enim, et consequat sapien varius id. Ut at odio vel elit ullamcorper cursus. Phasellus non libero ac risus vehicula rhoncus at non leo. Proin fermentum urna quis nibh pretium tempor. Proin viverra arcu quis sodales lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"github": "https://www.github.com",
+			"externalLink": "https://www.google.com",
+			"techStack": [
+				"node",
+				"express",
+				"vue",
+				"mongodb",
+				"html",
+				"css",
+				"figma"
+			]
 		}
 	],
 	"skills": {
-		"backend": ["Python", "Node.js", "Express.js", "Django", "Socket.io"],
+		"backend": ["Python", "Node.js", "Express.js"],
 		"frontend": ["JavaScript", "HTML5", "CSS3", "Vue.js", "React"],
 		"database": ["MongoDB", "MySQL"],
 		"other": [
 			"Figma",
 			"Git",
-			"Bash",
+			"Bash Script",
+			"Heroku",
 			"Arduino",
 			"C/C++",
-			"C#",
-			"Unity",
-			"React Native",
-			"Heroku"
+			"Fusion 360"
 		]
 	}
 }

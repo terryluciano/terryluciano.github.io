@@ -44,12 +44,17 @@
 			"parser": "@babel/eslint-parser"
 		},
 		"rules": {
+			"indent": [
+				"warn",
+				4
+			],
 			"prettier/prettier": [
 				"warn",
 				{
 					"singleQuote": true,
 					"semi": false,
-					"trailingComma": "none"
+					"trailingComma": "none",
+					"indent": 4
 				}
 			]
 		}

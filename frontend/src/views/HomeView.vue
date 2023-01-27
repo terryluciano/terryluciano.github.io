@@ -4,23 +4,16 @@ import HomeBubble from '../components/HomeBubble.vue';
 
 <template>
 	<div id="home">
-		<HomeBubble v-for="index in 5" :key="index" :bID="index" />
-		<div class="profile-picture front-index">
-			<img src="@/assets/profilePH.png" />
-		</div>
+		<HomeBubble v-for="index in 20" :key="index" />
 		<div class="home-bio front-index">
-			<div class="home-bio-title">
-				<h1>Hey, I’m Terrence Luciano</h1>
-				<h2>A Backend focused Full-Stack Web Developer</h2>
-			</div>
-			<p class="home-bio-quote">"quote goes here"</p>
+			<img class="profile-picture" src="@/assets/profilePH.png" />
+			<h1>Hey, I’m Terrence Luciano</h1>
+			<h2>"Love to Build Awesome Things"</h2>
 			<p class="home-bio-description">
-				I am a Full-Stack Web Developer from Northern New Jersey with 3+
-				years of experience building web applications. I primarily focus
-				on creating efficient and fast backend web applications with a
-				team or on my own. I worked as a Computer Science Project Lead
-				for Rutgers Data Science Consulting and we worked with Johnson &
-				Johnson Innovation.
+				Hey, I’m Terry, a Full-Stack Web Developer from Northern New
+				Jersey with 3+ of programming experience. Primary experience in
+				backend and frontend web development, but I’m always excited to
+				learn new skills whenever given the opportunity.
 			</p>
 		</div>
 	</div>
@@ -39,6 +32,16 @@ import HomeBubble from '../components/HomeBubble.vue';
 	gap: 20px;
 	font-family: 'Nunito Sans', sans-serif;
 	overflow: hidden;
+	padding: 50px 0px;
+}
+
+.home-bio {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0px;
+	width: 70%;
+	max-width: 1200px;
 }
 
 .front-index {
@@ -46,55 +49,58 @@ import HomeBubble from '../components/HomeBubble.vue';
 }
 
 .profile-picture {
-	display: block;
-	padding: 20px;
+	height: 250px;
+	width: 250px;
 	border-radius: 50%;
-	background-color: #fffbfa;
-}
-.profile-picture img {
-	height: 230px;
-	width: 230px;
+	border-color: #f0effb;
+	border-width: 10px;
+	border-style: solid;
 }
 
-.home-bio {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 0px;
-	gap: 10px;
-	max-width: 910px;
-}
-
-.home-bio-title {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-.home-bio-title h1 {
+.home-bio h1 {
 	font-size: 3em;
 }
 
-.home-bio-title h2 {
-	font-size: 1.5em;
+.home-bio h2 {
+	font-size: 2em;
 }
 
-.home-bio-title h1,
-.home-bio-title h2 {
+.home-bio h1,
+.home-bio h2 {
 	margin: 0px;
 	font-weight: 600;
 	text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-.home-bio-quote {
-	margin: 0px;
-	font-size: 1.5em;
-	font-style: italic;
-	font-weight: 600;
+	text-align: center;
 }
 
 .home-bio-description {
 	margin: 0px;
 	font-size: 1.25em;
+}
+
+@media screen and (max-width: 800px) {
+	.home-bio {
+		width: 90%;
+	}
+	.home-bio h1 {
+		font-size: 2.5em;
+	}
+
+	.home-bio h2 {
+		font-size: 1.5em;
+	}
+	.home-bio-description {
+		text-align: justify;
+	}
+	.profile-picture {
+		height: 200px;
+		width: 200px;
+	}
+}
+
+@media screen and (min-height: 1000px) {
+	#home {
+		height: 100vh;
+	}
 }
 </style>

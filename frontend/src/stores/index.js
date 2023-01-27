@@ -2,7 +2,34 @@ import { defineStore } from 'pinia';
 import { ref, getCurrentInstance } from 'vue';
 import axios from 'axios';
 
-export const useSkillsStore = defineStore('projects', () => {
+export const useProjectsStore = defineStore('projects', () => {
+	// states
+	const projects = ref([]);
+	const fetchError = ref(null);
+
+	// getters
+
+	// actions
+	function fetchProjects() {
+		const projectsPath =
+			getCurrentInstance().appContext.config.globalProperties.$hostname +
+			'/api/projects';
+
+		axios
+			.get(projectsPath)
+			.then((res) => {
+				projects.value = res.data;
+			})
+			.catch((err) => {
+				console.error(err);
+				fetchError.value = true;
+			});
+	}
+
+	return { projects, fetchError, fetchProjects };
+});
+
+export const useSkillsStore = defineStore('skills', () => {
 	// states
 	const skills = ref({
 		backend: [],
@@ -23,17 +50,10 @@ export const useSkillsStore = defineStore('projects', () => {
 		axios
 			.get(skillsPath)
 			.then((res) => {
-				console.log(res.data);
-				skills.value.backend = skills.value.backend.concat(
-					res.data.backend
-				);
-				skills.value.frontend = skills.value.frontend.concat(
-					res.data.frontend
-				);
-				skills.value.database = skills.value.database.concat(
-					res.data.database
-				);
-				skills.value.other = skills.value.other.concat(res.data.other);
+				skills.value.backend = res.data.backend;
+				skills.value.frontend = res.data.frontend;
+				skills.value.database = res.data.database;
+				skills.value.other = res.data.other;
 				skillsRecieved.value = true;
 			})
 			.catch((err) => {
