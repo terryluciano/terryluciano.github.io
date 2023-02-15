@@ -48,7 +48,7 @@ export const useSkillsStore = defineStore('skills', () => {
 	function fetchSkills() {
 		const skillsPath =
 			process.env.NODE_ENV === 'production'
-				? '/api/projects'
+				? '/api/skills'
 				: getCurrentInstance().appContext.config.globalProperties
 						.$hostname + '/api/skills';
 		axios
