@@ -12,6 +12,8 @@ server.use(cors());
 server.use(express.static('public'));
 server.use(express.urlencoded({ extended: true }));
 
+server.use(express.static(path.resolve(__dirname, 'public')));
+
 server.get('/', (req, res) => {
 	res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
