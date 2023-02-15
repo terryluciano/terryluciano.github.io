@@ -12,8 +12,10 @@ export const useProjectsStore = defineStore('projects', () => {
 	// actions
 	function fetchProjects() {
 		const projectsPath =
-			getCurrentInstance().appContext.config.globalProperties.$hostname +
-			'/api/projects';
+			process.env.NODE_ENV === 'production'
+				? '/api/projects'
+				: getCurrentInstance().appContext.config.globalProperties
+						.$hostname + '/api/projects';
 
 		axios
 			.get(projectsPath)
@@ -45,8 +47,10 @@ export const useSkillsStore = defineStore('skills', () => {
 	// actions
 	function fetchSkills() {
 		const skillsPath =
-			getCurrentInstance().appContext.config.globalProperties.$hostname +
-			'/api/skills';
+			process.env.NODE_ENV === 'production'
+				? '/api/projects'
+				: getCurrentInstance().appContext.config.globalProperties
+						.$hostname + '/api/skills';
 		axios
 			.get(skillsPath)
 			.then((res) => {

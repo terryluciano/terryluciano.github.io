@@ -54,18 +54,12 @@ const techStackSrc = props.techStack.map(
 					v-if="props.github != '' || props.externalLink != ''"
 					class="icon-line-break"
 				></div>
-				<a
-					v-if="props.github != ''"
-					:href="props.github"
-					target="_blank"
+				<a v-if="props.github != ''" :href="props.github"
 					><img
 						class="project-information-icon"
 						src="@/assets/github-vector.png"
 				/></a>
-				<a
-					v-if="props.externalLink != ''"
-					:href="props.externalLink"
-					target="_blank"
+				<a v-if="props.externalLink != ''" :href="props.externalLink"
 					><img
 						class="project-information-icon"
 						src="@/assets/external-link-vector.png"
@@ -101,7 +95,6 @@ const techStackSrc = props.techStack.map(
 	gap: 0px;
 	font-family: 'Open Sans', sans-serif;
 }
-
 .project-information h3 {
 	font-size: 1.5em;
 	font-weight: 600;
@@ -109,7 +102,6 @@ const techStackSrc = props.techStack.map(
 	font-style: normal;
 	margin: 0px;
 }
-
 .project-information h4 {
 	font-size: 1.25em;
 	font-weight: 400;
@@ -121,7 +113,6 @@ const techStackSrc = props.techStack.map(
 .project-information p {
 	margin: 10px 0px;
 }
-
 .project-information-icon {
 	height: 24px;
 	margin: 0px;
@@ -134,7 +125,6 @@ const techStackSrc = props.techStack.map(
 	gap: 10px;
 	flex-wrap: wrap;
 }
-
 .icon-line-break {
 	border-width: 1px;
 	border-style: solid;
