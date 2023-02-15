@@ -13,14 +13,14 @@ server.use(express.static('public'));
 server.use(express.urlencoded({ extended: true }));
 
 server.get('/', (req, res) => {
-	res.send('Hello');
+	res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 // used to pull project images from the public folder
 server.get('/api/projects/:imageID', (req, res) => {
 	const { imageID } = req.params;
 
-	fs.readdir(path.resolve(__dirname, 'public', 'projects'), (err, files) => {
+	fs.readdir(path.resolve(__dirname, 'images', 'projects'), (err, files) => {
 		if (err) {
 			console.error(err);
 		} else {
@@ -31,7 +31,7 @@ server.get('/api/projects/:imageID', (req, res) => {
 				if (file === imageID) {
 					imagePath = path.resolve(
 						__dirname,
-						'public',
+						'images',
 						'projects',
 						file
 					);
@@ -43,7 +43,7 @@ server.get('/api/projects/:imageID', (req, res) => {
 			if (!imageFound) {
 				imagePath = path.resolve(
 					__dirname,
-					'public',
+					'images',
 					'projects',
 					'default.png'
 				);
@@ -60,7 +60,7 @@ server.get('/api/program-icon/:iconID', (req, res) => {
 	const { iconID } = req.params;
 
 	fs.readdir(
-		path.resolve(__dirname, 'public', 'program-icons'),
+		path.resolve(__dirname, 'images', 'program-icons'),
 		(err, files) => {
 			if (err) {
 				console.error(err);
@@ -73,7 +73,7 @@ server.get('/api/program-icon/:iconID', (req, res) => {
 					if (fileName === iconID) {
 						imagePath = path.resolve(
 							__dirname,
-							'public',
+							'images',
 							'program-icons',
 							file
 						);
@@ -85,7 +85,7 @@ server.get('/api/program-icon/:iconID', (req, res) => {
 				if (!imageFound) {
 					imagePath = path.resolve(
 						__dirname,
-						'public',
+						'images',
 						'default.png'
 					);
 					console.log('Image Not Found: ' + imagePath);
@@ -119,16 +119,6 @@ server.get('/api/skills', (req, res) => {
 	});
 });
 
-server.post('/api/contact', (req, res) => {
-	console.log('Contact Form Submitted');
-	console.log(req);
-	if (process.env.ENV == 'dev') {
-		res.redirect('http://localhost:8080');
-	} else {
-		res.redirect('/');
-	}
-});
-
-server.listen(port, '192.168.7.77' || 'localhost', () => {
+server.listen(port, () => {
 	console.log('Listening on Port: ' + port);
 });

@@ -6,7 +6,10 @@ import HomeBubble from '../components/HomeBubble.vue';
 	<div id="home">
 		<HomeBubble v-for="index in 20" :key="index" />
 		<div class="home-bio front-index">
-			<img class="profile-picture" src="@/assets/profilePH.png" />
+			<img
+				class="profile-picture"
+				src="@/assets/profile-picture-fixed.jpg"
+			/>
 			<h1>Hey, I’m Terrence Luciano</h1>
 			<h2>"Love to Build Awesome Things"</h2>
 			<p class="home-bio-description">
@@ -49,10 +52,11 @@ import HomeBubble from '../components/HomeBubble.vue';
 }
 
 .profile-picture {
+	object-fit: cover;
 	height: 250px;
 	width: 250px;
 	border-radius: 50%;
-	border-color: #f0effb;
+	border-color: #5349d4;
 	border-width: 10px;
 	border-style: solid;
 }
@@ -91,10 +95,14 @@ import HomeBubble from '../components/HomeBubble.vue';
 	}
 	.home-bio-description {
 		text-align: justify;
+		font-size: 1.2em;
 	}
 	.profile-picture {
 		height: 200px;
 		width: 200px;
+	}
+	#home {
+		height: 100%;
 	}
 }
 

@@ -14,8 +14,6 @@ const props = defineProps([
 	'techStack',
 ]);
 
-console.log(props.techStack);
-
 const hostname =
 	getCurrentInstance().appContext.config.globalProperties.$hostname;
 
@@ -56,12 +54,18 @@ const techStackSrc = props.techStack.map(
 					v-if="props.github != '' || props.externalLink != ''"
 					class="icon-line-break"
 				></div>
-				<a v-if="props.github != ''" :href="props.github"
+				<a
+					v-if="props.github != ''"
+					:href="props.github"
+					target="_blank"
 					><img
 						class="project-information-icon"
 						src="@/assets/github-vector.png"
 				/></a>
-				<a v-if="props.externalLink != ''" :href="props.externalLink"
+				<a
+					v-if="props.externalLink != ''"
+					:href="props.externalLink"
+					target="_blank"
 					><img
 						class="project-information-icon"
 						src="@/assets/external-link-vector.png"
@@ -82,9 +86,8 @@ const techStackSrc = props.techStack.map(
 	margin: 0px 20px;
 }
 .project-image {
-	width: 350px;
-	max-width: 350px;
-	height: 250px;
+	width: 400px;
+	height: 225px;
 	object-fit: cover;
 	border: 5px solid #8a84e2;
 	border-radius: 10px;
