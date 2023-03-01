@@ -7,14 +7,12 @@ import SectionTitle from '../components/SectionTitle.vue';
 		<SectionTitle title="Contact" />
 		<div class="contact-container">
 			<p>
-				Feel free to contact me with any questions or comments. You can
-				email me at
+				For any inquiries, please do not hesitate to contact me at
 				<a href="mailto:terryluciano1@gmail.com"
 					>terryluciano1@gmail.com</a
-				>. My inbox is always open, and I will try my best to get back
-				to you as soon as possible. Thank you for taking the time to
-				visit my portfolio, hope you have a wonderful day, and I hope to
-				speak with you soon!
+				>. I will reply to you as soon as possible and look forward to
+				connecting with you. Thank you for taking the time to visit my
+				portfolio. Have a great day!
 			</p>
 			<a class="email-button" href="mailto:terryluciano1@gmail.com"
 				>Send Email</a

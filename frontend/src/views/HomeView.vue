@@ -11,7 +11,7 @@ import HomeBubble from '../components/HomeBubble.vue';
 				src="@/assets/profile-picture-fixed.jpg"
 			/>
 			<h1>Hey, I’m Terrence Luciano</h1>
-			<h2>"Love to Build Awesome Things"</h2>
+			<h2>"Love Creating Awesome Things"</h2>
 			<p class="home-bio-description">
 				Hey, I’m Terry, a Full-Stack Web Developer from Northern New
 				Jersey with 3+ of programming experience. Primary experience in

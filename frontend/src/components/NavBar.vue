@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 
 const mobileNavMenu = ref(null);
 
@@ -9,6 +9,11 @@ function openNavMenu() {
 function closeNavMenu() {
 	mobileNavMenu.value.style.top = '100%';
 }
+
+const hostname =
+	getCurrentInstance().appContext.config.globalProperties.$hostname;
+
+const resumePath = hostname + '/resume';
 </script>
 
 <template>
@@ -23,7 +28,7 @@ function closeNavMenu() {
 			<a href="https://github.com/TerryLDev" target="_blank">
 				<img src="@/assets/github-vector.png" />
 			</a>
-			<a href="#">
+			<a :href="resumePath" target="_blank">
 				<img src="@/assets/resume-icon.png" />
 			</a>
 		</div>
@@ -56,7 +61,9 @@ function closeNavMenu() {
 				target="_blank"
 				>Github</a
 			>
-			<a href="#" @click="closeNavMenu">Resume</a>
+			<a :href="resumePath" target="_blank" @click="closeNavMenu"
+				>Resume</a
+			>
 		</div>
 	</div>
 </template>

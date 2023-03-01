@@ -15,7 +15,13 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.static(path.resolve(__dirname, 'public')));
 
 server.get('/', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+	res.send('index.html');
+});
+
+server.get('/resume', (req, res) => {
+	// send link to resume that is stored in the "other" folder
+	const resumePath = path.resolve(__dirname, 'other', 'resume.pdf');
+	res.sendFile(resumePath);
 });
 
 // used to pull project images from the public folder
