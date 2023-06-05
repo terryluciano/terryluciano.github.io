@@ -1,0 +1,86 @@
+<script setup>
+import SectionTitle from '../components/SectionTitle.vue';
+import ProjectCard from '@/components/ProjectCard.vue';
+
+const projects = [
+	{
+		projectImage: 'jji-heat.png',
+		projectName: 'Health Equity Assessment Tool',
+		companyName: 'Rutgers Data Science Consulting',
+		yearStart: 2022,
+		yearEnd: 2022,
+		position: 'Computer Science Project Lead',
+		projectDescription:
+			"As the Computer Science Project Lead at Rutgers Data Science Consulting, we collaborated with Johnson & Johnson Innovations on a grant aimed at developing a system for generating personalized survey results in PDF format. Our team's overarching goal was to streamline the survey result generation process for innovators who had taken the Health Equity Assessment Tool survey. My key responsibilities on the project included designing a visually appealing mockup of the report, developing a robust system capable of generating personalized reports, and leveraging SFTP to seamlessly upload the PDF reports to J&J Innovation's server. This project required close collaboration with key stakeholders, including technical and non-technical teams, to ensure a smooth and effective implementation of the solution.",
+		github: '',
+		externalLink: '',
+		techStack: [
+			'python-icon.png',
+			'html-icon.png',
+			'css-icon.png',
+			'figma-icon.png',
+		],
+	},
+	{
+		projectImage: 'gammabets-example.png',
+		projectName: 'GammaBets',
+		companyName: 'Personal Project',
+		yearStart: 2021,
+		yearEnd: 2022,
+		position: 'Lead Developer',
+		projectDescription:
+			'As the Lead Developer at GammaBets, I developed a comprehensive backend system that efficiently managed various aspects of the website, including mini-games, trades, transactions, and more. Additionally, I was responsible for designing the frontend of the website based on a mockup, ensuring a user-friendly and intuitive interface. GammaBets provided Rust players with a platform to engage in thrilling mini-games and trade valuable in-game items with other players. Although GammaBets never launched, my experience as a full-stack web developer was greatly enhanced by the project.',
+		github: 'https://github.com/TerryLDev/GammaBets',
+		externalLink: '',
+		techStack: [
+			'node-icon.png',
+			'express-icon.png',
+			'vue-icon.png',
+			'mongodb-icon.png',
+			'html-icon.png',
+			'css-icon.png',
+			'figma-icon.png',
+		],
+	},
+];
+
+const sectionTitle = 'Projects';
+</script>
+
+<template>
+	<div id="projects">
+		<SectionTitle :title="sectionTitle" />
+		<div class="project-container">
+			<ProjectCard
+				v-for="project in projects"
+				:key="project"
+				:projectImage="project.projectImage"
+				:projectName="project.projectName"
+				:companyName="project.companyName"
+				:yearStart="project.yearStart"
+				:yearEnd="project.yearEnd"
+				:position="project.position"
+				:projectDescription="project.projectDescription"
+				:github="project.github"
+				:externalLink="project.externalLink"
+				:techStack="project.techStack"
+			/>
+		</div>
+	</div>
+</template>
+
+<style>
+#projects {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.project-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+}
+</style>
