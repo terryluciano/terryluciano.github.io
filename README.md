@@ -1,24 +1,3 @@
-# frontend
+# My Portfolio
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Thank you for checking out my portfolio! This is a nice and simple website displaying some of the projects I've worked on along with a list skills I have gained over the years.
