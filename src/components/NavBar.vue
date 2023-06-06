@@ -20,11 +20,11 @@ function closeNavMenu() {
 			<a href="#contact">Contact</a>
 		</div>
 		<div class="nav-external-links">
-			<a href="https://github.com/TerryLDev" target="_blank">
+			<a href="https://github.com/terryluciano" target="_blank">
 				<img src="@/assets/github-vector.png" />
 			</a>
 			<a
-				href="https://drive.google.com/file/d/10GMeR36X5thbS0UBGeuC970UhxWwYLXf/view?usp=sharing"
+				href="https://drive.google.com/file/d/1FQpr_OEa2d782MHCi6RXhFF8I4dLt3Lm/view?usp=sharing"
 				target="_blank"
 			>
 				<img src="@/assets/resume-icon.png" />
