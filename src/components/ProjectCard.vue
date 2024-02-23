@@ -14,11 +14,9 @@ const props = defineProps([
 	'techStack',
 ]);
 
-const projectImage = require('@/assets/projects/' + props.projectImage);
+const projectImage = props.projectImage
 
-const techStackSrc = props.techStack.map((tech) =>
-	require('@/assets/program-icons/' + tech)
-);
+const techStackSrc = props.techStack
 </script>
 
 <template>

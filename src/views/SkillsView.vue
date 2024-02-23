@@ -2,21 +2,9 @@
 import SectionTitle from '../components/SectionTitle.vue';
 import SkillSection from '../components/SkillSection.vue';
 import { ref } from '@vue/reactivity';
+import { useProjectStore } from "@/store.js";
 
-const skills = {
-	backend: ['Node.js', 'Python', 'Express.js'],
-	frontend: ['Vue.js', 'React', 'JavaScript', 'HTML5', 'CSS3'],
-	database: ['MongoDB', 'MySQL'],
-	other: [
-		'Figma',
-		'Git',
-		'Bash Script',
-		'Heroku',
-		'Arduino',
-		'C/C++',
-		'Fusion 360',
-	],
-};
+const skills = useProjectStore().skills;
 
 const backendCards = ref(null);
 const frontendCards = ref(null);
