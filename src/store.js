@@ -48,7 +48,7 @@ export const useProjectStore = defineStore('project', {
       ],
       skills: {
         backend: ['Node.js', 'Python', 'Express.js'],
-        frontend: ['Vue.js', 'Solis.js', 'React', 'JavaScript', 'HTML5', 'CSS3'],
+        frontend: ['Vue.js', 'Solid.js', 'React', 'JavaScript', 'HTML5', 'CSS3'],
         database: ['MongoDB', 'MySQL'],
         other: ['Figma', 'Git', 'Bash Script', 'Heroku', 'Arduino', 'C/C++', 'Fusion 360']
       }
