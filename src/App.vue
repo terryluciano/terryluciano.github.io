@@ -7,8 +7,8 @@ import SkillsView from './views/SkillsView.vue'
 import ContactView from './views/ContactView.vue'
 
 onMounted(() => {
-    console.log(
-        'Hello! Thank you for checking out my portfolio! If you have any questions please email me at terryluciano1@gmail.com'
+  console.log(
+    'Hello! Thank you for checking out my portfolio! If you have any questions please email me at terryluciano1@gmail.com'
   )
 })
 </script>
