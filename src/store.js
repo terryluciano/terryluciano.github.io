@@ -48,17 +48,25 @@ export const useProjectStore = defineStore('project', {
           ]
         },
         {
-          projectImage: powerlines,
-          projectName: 'Powerlines',
-          companyName: 'Non-Profit Project',
-          yearStart: 2023,
-          yearEnd: 2023,
+          projectImage: rustyloot,
+          projectName: 'Rustyloot Dashboard',
+          companyName: 'RustyLoot',
+          yearStart: 2024,
+          yearEnd: 2024,
           position: 'Full-Stack Web Developer',
           projectDescription:
             "As the Computer Science Project Lead at Rutgers Data Science Consulting, we collaborated with Johnson & Johnson Innovations on a grant aimed at developing a system for generating personalized survey results in PDF format. Our team's overarching goal was to streamline the survey result generation process for innovators who had taken the Health Equity Assessment Tool survey. My key responsibilities on the project included designing a visually appealing mockup of the report, developing a robust system capable of generating personalized reports, and leveraging SFTP to seamlessly upload the PDF reports to J&J Innovation's server. This project required close collaboration with key stakeholders, including technical and non-technical teams, to ensure a smooth and effective implementation of the solution",
           github: '',
           externalLink: '',
-          techStack: [vueIcon, nodeIcon, expressIcon, mongodbIcon, htmlIcon, cssIcon, gitIcon]
+          techStack: [
+            reactIcon,
+            tailwindIcon,
+            socketIoIcon,
+            cloudFlareIcon,
+            htmlIcon,
+            cssIcon,
+            gitIcon
+          ]
         },
         {
           projectImage: jjiHeat,
@@ -72,6 +80,19 @@ export const useProjectStore = defineStore('project', {
           github: '',
           externalLink: '',
           techStack: [pythonIcon, htmlIcon, cssIcon, figmaIcon]
+        },
+        {
+          projectImage: powerlines,
+          projectName: 'Powerlines',
+          companyName: 'Non-Profit Project',
+          yearStart: 2023,
+          yearEnd: 2023,
+          position: 'Full-Stack Web Developer',
+          projectDescription:
+            "As the Computer Science Project Lead at Rutgers Data Science Consulting, we collaborated with Johnson & Johnson Innovations on a grant aimed at developing a system for generating personalized survey results in PDF format. Our team's overarching goal was to streamline the survey result generation process for innovators who had taken the Health Equity Assessment Tool survey. My key responsibilities on the project included designing a visually appealing mockup of the report, developing a robust system capable of generating personalized reports, and leveraging SFTP to seamlessly upload the PDF reports to J&J Innovation's server. This project required close collaboration with key stakeholders, including technical and non-technical teams, to ensure a smooth and effective implementation of the solution",
+          github: '',
+          externalLink: '',
+          techStack: [vueIcon, nodeIcon, expressIcon, mongodbIcon, htmlIcon, cssIcon, gitIcon]
         },
         {
           projectImage: gammaBets,
@@ -92,24 +113,16 @@ export const useProjectStore = defineStore('project', {
             socketIoIcon,
             htmlIcon,
             cssIcon,
-            figmaIcon
+            figmaIcon,
+            gitIcon
           ]
         }
       ],
       skills: {
-        backend: ['Node.js', 'Python', 'Express.js'],
-        frontend: ['Vue.js', 'Solid.js', 'React', 'Tailwind', 'JavaScript', 'HTML5', 'CSS3'],
-        database: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis'],
-        other: [
-          'Git',
-          'Figma',
-          'Socket.io',
-          'Cloudflare',
-          'Heroku',
-          'Bash Script',
-          'C/C++',
-          'Fusion 360'
-        ]
+        backend: ['Node.js', 'Python', 'Express.js', 'Go'],
+        frontend: ['React', 'Solid.js', 'Vue.js', 'Tailwind', 'JavaScript', 'HTML5', 'CSS3'],
+        database: ['MySQL', 'MongoDB', 'PostgreSQL', 'Redis'],
+        other: ['Git', 'Figma', 'Socket.io', 'Cloudflare', 'Heroku', 'Bash Script', 'Fusion 360']
       }
     }
   }
