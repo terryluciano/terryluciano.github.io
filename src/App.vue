@@ -5,6 +5,7 @@ import NavBar from './components/NavBar.vue'
 import ProjectsView from './views/ProjectsView.vue'
 import SkillsView from './views/SkillsView.vue'
 import ContactView from './views/ContactView.vue'
+import FooterComponent from './components/FooterComponent.vue'
 
 onMounted(() => {
   console.log(
@@ -19,6 +20,7 @@ onMounted(() => {
   <SkillsView />
   <ProjectsView />
   <ContactView />
+  <FooterComponent />
 </template>
 
 <style>

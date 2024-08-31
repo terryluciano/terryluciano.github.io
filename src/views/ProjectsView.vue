@@ -12,7 +12,7 @@ const projects = projectStore.projects
 <template>
   <div id="projects">
     <SectionTitle :title="sectionTitle" />
-    <div class="project-container gap-10">
+    <div class="project-container gap-12">
       <ProjectCard
         v-for="project in projects"
         :key="project"
