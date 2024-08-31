@@ -12,7 +12,7 @@ const projects = projectStore.projects
 <template>
   <div id="projects">
     <SectionTitle :title="sectionTitle" />
-    <div class="project-container">
+    <div class="project-container gap-10">
       <ProjectCard
         v-for="project in projects"
         :key="project"
@@ -43,6 +43,5 @@ const projects = projectStore.projects
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
 }
 </style>
