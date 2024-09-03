@@ -8,6 +8,7 @@ import ContactView from './views/ContactView.vue';
 import FooterComponent from './components/FooterComponent.vue';
 
 import { useDark } from '@vueuse/core';
+import SocialSection from './views/SocialSection.vue';
 
 const isDark = useDark();
 
@@ -29,21 +30,29 @@ onMounted(() => {
 </script>
 
 <template>
-    <main
-        class="bg-light-bg dark:bg-dark-bg flex flex-col gap-10 w-full h-full text-light-text dark:text-dark-text font-Poppins"
+    <div
+        class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center"
     >
-        <div class="flex flex-col gap-0 w-full h-auto">
-            <NavBar />
-            <HomeView />
+        <div class="flex flex-col 3xl:gap-40 gap-20 w-full h-full max-w-[1200px]">
+            <div class="flex flex-col gap-0 w-full h-auto">
+                <NavBar />
+                <HomeView />
+            </div>
+            <SocialSection />
+            <SkillsView />
+            <ProjectsView />
+            <ContactView />
+            <FooterComponent />
         </div>
-        <SkillsView />
-        <ProjectsView />
-        <ContactView />
-        <FooterComponent />
-    </main>
+    </div>
 </template>
 
 <style>
+#app {
+    width: 100vw;
+    height: 100%;
+}
+
 body {
     width: 100%;
     height: 100%;

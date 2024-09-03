@@ -1,107 +1,24 @@
 <script setup></script>
 
 <template>
-    <div id="home">
-        <!-- <HomeBubble v-for="index in 20" :key="index" /> -->
-        <div class="home-bio front-index">
-            <img class="profile-picture" src="@/assets/profile-picture-fixed.jpg" />
-            <h1>Hey, I’m Terrence Luciano</h1>
-            <h2>"Love Creating Awesome Things"</h2>
-            <p class="home-bio-description">
-                Hey, I’m Terry, a Full-Stack Web Developer from Northern New Jersey with 3+ of
-                programming experience. Primary experience in backend and frontend web development,
-                but I’m always excited to learn new skills whenever given the opportunity.
-            </p>
+    <div id="home" class="w-full h-full flex-center flex-row gap-8 py-40">
+        <div class="flex-center size-[200px] bg-light-gradient-135 p-2 rounded-full">
+            <img class="size-full rounded-full" src="@/assets/profile-picture-fixed.jpg" />
+        </div>
+        <div
+            class="flex flex-col gap-2 font-Inter text-5xl font-semibold text-light-text dark:text-dark-text drop-shadow-light-shadow dark:drop-shadow-dark-shadow"
+        >
+            <h1>Hey,</h1>
+            <h1>
+                I’m
+                <span
+                    class="text-transparent bg-clip-text bg-light-gradient-90 dark:bg-dark-gradient-90"
+                    >Terry Luciano</span
+                >
+            </h1>
+            <h2 class="text-[32px]">Full-Stack Web Developer</h2>
         </div>
     </div>
 </template>
 
-<style>
-#home {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    font-family: 'Nunito Sans', sans-serif;
-    overflow: hidden;
-    padding: 50px 0px;
-}
-
-.home-bio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0px;
-    width: 70%;
-    max-width: 1200px;
-}
-
-.front-index {
-    z-index: 1;
-}
-
-.profile-picture {
-    object-fit: cover;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    border-color: #5349d4;
-    border-width: 10px;
-    border-style: solid;
-}
-
-.home-bio h1 {
-    font-size: 3em;
-}
-
-.home-bio h2 {
-    font-size: 2em;
-}
-
-.home-bio h1,
-.home-bio h2 {
-    margin: 0px;
-    font-weight: 600;
-    text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
-    text-align: center;
-}
-
-.home-bio-description {
-    margin: 0px;
-    font-size: 1.25em;
-}
-
-@media screen and (max-width: 800px) {
-    .home-bio {
-        width: 90%;
-    }
-    .home-bio h1 {
-        font-size: 2.5em;
-    }
-
-    .home-bio h2 {
-        font-size: 1.5em;
-    }
-    .home-bio-description {
-        text-align: justify;
-        font-size: 1.2em;
-    }
-    .profile-picture {
-        height: 200px;
-        width: 200px;
-    }
-    #home {
-        height: 100%;
-    }
-}
-
-@media screen and (min-height: 1000px) {
-    #home {
-        height: 100vh;
-    }
-}
-</style>
+<style></style>
