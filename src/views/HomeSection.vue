@@ -2,7 +2,9 @@
 
 <template>
     <div id="home" class="w-full h-full flex-center flex-row gap-8 py-40">
-        <div class="flex-center size-[200px] bg-light-gradient-135 p-2 rounded-full">
+        <div
+            class="flex-center size-[200px] bg-light-gradient-135 dark:bg-dark-gradient-135 p-2 rounded-full"
+        >
             <img class="size-full rounded-full" src="@/assets/profile-picture-fixed.jpg" />
         </div>
         <div

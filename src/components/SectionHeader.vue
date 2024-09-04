@@ -9,7 +9,7 @@ const props = defineProps({
 <template>
     <div class="flex-center flex-row w-full h-auto gap-4">
         <div class="w-full bg-light-secondary dark:bg-dark-secondary h-[2px]" />
-        <h3 class="text-5xl font-medium font-Inter">{{ props.title }}</h3>
+        <h3 class="text-5xl font-medium font-Inter flex-shrink-0">{{ props.title }}</h3>
         <div class="w-full bg-light-secondary dark:bg-dark-secondary h-[2px]" />
     </div>
 </template>

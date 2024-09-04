@@ -32,11 +32,14 @@ export default {
                 'light-gradient-90': 'linear-gradient(90deg, #A688E2 0%, #3659CE 100%)',
                 'light-gradient-135': 'linear-gradient(135deg, #A688E2 0%, #3659CE 100%)',
                 'light-gradient-180': 'linear-gradient(180deg, #A688E2 0%, #3659CE 100%)',
+                'light-social-card': 'linear-gradient(360deg, #3659CE -100%, #A688E2 100%)',
+
                 'dark-gradient-0': 'linear-gradient(0deg, #3B1D77 0%, #3154C9 100%)',
                 'dark-gradient-45': 'linear-gradient(45deg, #3B1D77 0%, #3154C9 100%)',
                 'dark-gradient-90': 'linear-gradient(90deg, #3B1D77 0%, #3154C9 100%)',
                 'dark-gradient-135': 'linear-gradient(135deg, #3B1D77 0%, #3154C9 100%)',
                 'dark-gradient-180': 'linear-gradient(180deg, #3B1D77 0%, #3154C9 100%)',
+                'dark-social-card': 'linear-gradient(360deg, #3154C9 -100%, #3B1D77 100%)',
             },
             dropShadow: {
                 'light-shadow': '-2px 2px 4px 0px rgba(7 12 29 / 0.25)',

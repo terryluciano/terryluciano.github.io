@@ -1,14 +1,14 @@
 <script setup>
 import { onMounted, watch } from 'vue';
-import HomeView from './views/HomeView.vue';
+import { useDark } from '@vueuse/core';
+import HomeSection from './views/HomeSection.vue';
 import NavBar from './components/NavBar.vue';
 import ProjectsView from './views/ProjectsView.vue';
 import SkillsView from './views/SkillsView.vue';
 import ContactView from './views/ContactView.vue';
 import FooterComponent from './components/FooterComponent.vue';
-
-import { useDark } from '@vueuse/core';
 import SocialSection from './views/SocialSection.vue';
+import AboutMeSection from './views/AboutMeSection.vue';
 
 const isDark = useDark();
 
@@ -33,16 +33,17 @@ onMounted(() => {
     <div
         class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center"
     >
-        <div class="flex flex-col 3xl:gap-40 gap-20 w-full h-full max-w-[1200px]">
-            <div class="flex flex-col gap-0 w-full h-auto">
-                <NavBar />
-                <HomeView />
+        <NavBar />
+        <div class="flex flex-col w-full h-full max-w-[1200px]">
+            <HomeSection />
+            <div class="flex flex-col 3xl:gap-40 gap-20 w-full py-12">
+                <AboutMeSection />
+                <SocialSection />
+                <!-- <SkillsView />
+                <ProjectsView />
+                <ContactView />
+                <FooterComponent /> -->
             </div>
-            <SocialSection />
-            <SkillsView />
-            <ProjectsView />
-            <ContactView />
-            <FooterComponent />
         </div>
     </div>
 </template>
