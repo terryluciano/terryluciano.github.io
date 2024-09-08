@@ -1,27 +1,78 @@
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, reactive, ref, Transition } from 'vue';
 import { useDark } from '@vueuse/core';
+import LinkIcon from '@/components/icons/LinkIcon.vue';
 
 const props = defineProps({
     title: String,
-    iconLight: String,
-    iconDark: String,
     link: String,
     bgImage: String,
 });
 
 const isDark = useDark();
+
+const cardBg = reactive({
+    backgroundImage: `url(${props.bgImage})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+});
+
+const isHover = ref(false);
+
+const onMouseOver = () => (isHover.value = true);
+const onMouseLeave = () => (isHover.value = false);
+
+const onClick = () => {
+    if (props.link) window.open(props.link, '_blank');
+};
 </script>
 
 <template>
     <div
-        class="relative flex-col flex-center gap-2 bg-light-social-card dark:bg-dark-social-card w-full h-64 rounded-lg"
+        class="relative flex-col flex-center gap-2 bg-light-social-card dark:bg-dark-social-card w-full h-64 rounded-lg text-light-text dark:text-dark-text overflow-hidden cursor-pointer group"
+        @mouseover="onMouseOver"
+        @mouseleave="onMouseLeave"
+        @click="onClick"
     >
-        <img
-            :src="isDark ? props.iconDark : props.iconLight"
-            class="size-16"
-            :alt="props.title + ` icon`"
+        <div
+            class="absolute size-[104%] transition-all duration-200 ease-in-out top-[100%] group-hover:-top-[2%] -left-[2%] z-[1] group-hover:blur-sm"
+            :style="cardBg"
         />
-        <p class="font-Inter font-medium text-5xl">{{ props.title }}</p>
+
+        <div
+            class="relative size-[66px] transition-all duration-200 z-10 flex-center"
+            :class="{ 'group-hover:text-light-text': isDark }"
+        >
+            <Transition name="fade-icon">
+                <slot v-if="!isHover"></slot>
+                <LinkIcon v-else-if="isHover" :height="64" />
+            </Transition>
+        </div>
+
+        <p
+            class="font-Inter font-medium text-5xl z-10 transition-all duration-200"
+            :class="{ 'group-hover:text-light-text': isDark }"
+        >
+            {{ props.title }}
+        </p>
     </div>
 </template>
+
+<style scoped>
+.fade-icon-enter-active,
+.fade-icon-leave-active {
+    transition: opacity 0.2s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fade-icon-enter-from,
+.fade-icon-leave-to {
+    opacity: 0;
+}
+.fade-icon-enter-to,
+.fade-icon-leave-from {
+    opacity: 1;
+}
+</style>

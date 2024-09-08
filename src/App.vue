@@ -3,10 +3,10 @@ import { onMounted, watch } from 'vue';
 import { useDark } from '@vueuse/core';
 import HomeSection from './views/HomeSection.vue';
 import NavBar from './components/NavBar.vue';
-import ProjectsView from './views/ProjectsView.vue';
-import SkillsView from './views/SkillsView.vue';
-import ContactView from './views/ContactView.vue';
-import FooterComponent from './components/FooterComponent.vue';
+// import ProjectsView from './views/ProjectsView.vue';
+// import SkillsView from './views/SkillsView.vue';
+// import ContactView from './views/ContactView.vue';
+// import FooterComponent from './components/FooterComponent.vue';
 import SocialSection from './views/SocialSection.vue';
 import AboutMeSection from './views/AboutMeSection.vue';
 
@@ -31,7 +31,7 @@ onMounted(() => {
 
 <template>
     <div
-        class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center"
+        class="transition-all duration-150 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center"
     >
         <NavBar />
         <div class="flex flex-col w-full h-full max-w-[1200px]">

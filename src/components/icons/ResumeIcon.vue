@@ -1,0 +1,36 @@
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+    height: {
+        type: Number,
+        default: 50,
+    },
+    class: String,
+});
+</script>
+
+<template>
+    <svg
+        :width="props.height * (51 / 50)"
+        :height="props.height"
+        viewBox="0 0 51 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        :class="props.class"
+    >
+        <path
+            d="M19.4089 27.0836H31.9089M19.4089 35.4169H25.6589M8.99219 8.3336V41.6669C8.99219 42.772 9.43117 43.8318 10.2126 44.6132C10.994 45.3946 12.0538 45.8336 13.1589 45.8336H38.1589C39.2639 45.8336 40.3237 45.3946 41.1051 44.6132C41.8865 43.8318 42.3255 42.772 42.3255 41.6669V17.3794C42.3255 16.8244 42.2145 16.2749 41.9991 15.7633C41.7837 15.2517 41.4683 14.7883 41.0714 14.4003L31.8214 5.35443C31.0429 4.59331 29.9975 4.16707 28.9089 4.16693H13.1589C12.0538 4.16693 10.994 4.60592 10.2126 5.38732C9.43117 6.16872 8.99219 7.22853 8.99219 8.3336Z"
+            stroke="currentColor"
+            stroke-width="4.16667"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+        <path
+            d="M29.8252 4.16693V12.5003C29.8252 13.6053 30.2642 14.6651 31.0456 15.4465C31.827 16.2279 32.8868 16.6669 33.9919 16.6669H42.3252"
+            stroke="currentColor"
+            stroke-width="4.16667"
+            stroke-linejoin="round"
+        />
+    </svg>
+</template>
