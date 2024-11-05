@@ -4,7 +4,7 @@ import aboutMeSvg from '../assets/about-me.svg';
 </script>
 
 <template>
-    <SectionWrapper title="About Me">
+    <SectionWrapper id="about-me" title="About Me">
         <div class="w-full h-auto flex flex-row justify-center items-center gap-6">
             <div class="w-full h-auto flex flex-col justify-start items-start gap-2">
                 <h4 class="font-Inter text-4xl font-medium">Just a broke young adult</h4>

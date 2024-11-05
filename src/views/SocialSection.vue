@@ -11,7 +11,7 @@ import githubProfileBg from '@/assets/githubProfile.png';
 </script>
 
 <template>
-    <SectionWrapper title="Socials">
+    <SectionWrapper id="socials" title="Socials">
         <div class="flex flex-row gap-6 w-full">
             <SocialCard
                 title="Github"
