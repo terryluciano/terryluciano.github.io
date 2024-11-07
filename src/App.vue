@@ -9,6 +9,7 @@ import NavBar from './components/NavBar.vue';
 // import FooterComponent from './components/FooterComponent.vue';
 import SocialSection from './views/SocialSection.vue';
 import AboutMeSection from './views/AboutMeSection.vue';
+import ProjectsSection from './views/ProjectsSection.vue';
 
 const isDark = useDark();
 
@@ -31,7 +32,7 @@ onMounted(() => {
 
 <template>
     <div
-        class="transition-all duration-150 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center"
+        class="transition-all duration-150 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center w-full"
     >
         <NavBar />
         <div class="flex flex-col w-full h-full max-w-[1200px]">
@@ -39,8 +40,8 @@ onMounted(() => {
             <div class="flex flex-col 3xl:gap-40 gap-20 w-full py-12">
                 <AboutMeSection />
                 <SocialSection />
+                <ProjectsSection />
                 <!-- <SkillsView />
-                <ProjectsView />
                 <ContactView />
                 <FooterComponent /> -->
             </div>
@@ -57,6 +58,6 @@ onMounted(() => {
 body {
     width: 100%;
     height: 100%;
-    margin: 0px 0px 20px 0px;
+    overflow-x: hidden;
 }
 </style>
