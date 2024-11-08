@@ -1,12 +1,17 @@
 <script setup>
-import { defineProps, computed, watchEffect } from 'vue';
+import { defineProps, ref, watchEffect } from 'vue';
 import defaultImage from '@/assets/projects/default.png';
+import { useDark } from '@vueuse/core';
+import GithubIcon from './icons/GithubIcon.vue';
+import LinkIcon from './icons/LinkIcon.vue';
 
 const props = defineProps({
     projectImage: String,
     projectName: String,
     companyName: String,
+    monthStart: String,
     yearStart: [Number, String],
+    monthEnd: String,
     yearEnd: [Number, String],
     position: String,
     description: String,
@@ -15,10 +20,15 @@ const props = defineProps({
     techStack: Array,
 });
 
-const imgArr = computed(() => props.techStack.map((tech) => `src/assets/icons/${tech}.svg`));
+const isDark = useDark();
+
+const imgArr = ref([]);
 
 watchEffect(() => {
-    console.log(imgArr.value);
+    imgArr.value = props.techStack.map(
+        (tech) =>
+            `${window.location.origin}/public/icons/${isDark.value ? 'dark' : 'light'}/${tech}.svg`,
+    );
 });
 </script>
 
@@ -39,8 +49,14 @@ watchEffect(() => {
                 <p class="font-Inter font-semibold text-2xl">
                     <span>{{ props.projectName }}</span>
                     <span v-show="props.companyName"> - {{ props.companyName }}</span>
-                    <span v-if="props.yearEnd"> ({{ props.yearStart }} - {{ props.yearEnd }})</span>
-                    <span v-else> ({{ props.yearStart }})</span>
+                    <span> | </span>
+                    <span v-if="props.yearEnd" class="font-medium"
+                        >{{ props?.monthStart }} {{ props.yearStart }} - {{ props?.monthEnd }}
+                        {{ props.yearEnd }}</span
+                    >
+                    <span v-else class="font-medium"
+                        >{{ props?.monthStart }} {{ props.yearStart }}</span
+                    >
                 </p>
                 <p
                     v-show="props.position"
@@ -58,6 +74,16 @@ watchEffect(() => {
                     :src="imgSrc"
                     class="size-6 text-light-text dark:text-dark-text"
                 />
+                <div
+                    v-show="props.github || props.externalLink"
+                    class="w-0.5 h-6 bg-light-text dark:bg-dark-text"
+                />
+                <a v-show="props?.github" :href="props.github" target="_blank">
+                    <GithubIcon :height="24" />
+                </a>
+                <a v-show="props?.externalLink" :href="props.externalLink" target="_blank">
+                    <LinkIcon :height="24" />
+                </a>
             </div>
         </div>
     </div>

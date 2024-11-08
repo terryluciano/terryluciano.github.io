@@ -32,7 +32,7 @@ onMounted(() => {
 
 <template>
     <div
-        class="transition-all duration-150 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center w-full"
+        class="transition-all duration-150 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center w-full scroll-smooth"
     >
         <NavBar />
         <div class="flex flex-col w-full h-full max-w-[1200px]">
