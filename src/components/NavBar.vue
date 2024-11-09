@@ -9,7 +9,7 @@ const toggleDark = useToggle(isDark);
 
 <template>
     <nav class="relative w-full h-24 flex flex-row justify-center items-center">
-        <div class="flex flex-row justify-center items-center gap-4">
+        <div class="flex flex-row justify-center items-center gap-6">
             <a href="#about-me">About Me</a>
             <a href="#socials">Socials</a>
             <a href="#skills">Skills</a>
