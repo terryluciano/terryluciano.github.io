@@ -72,7 +72,7 @@ watchEffect(() => {
                     v-for="imgSrc in imgArr"
                     :key="imgSrc"
                     :src="imgSrc"
-                    class="size-6 text-light-text dark:text-dark-text"
+                    class="size-6 hover:scale-110 transition-all"
                 />
                 <div
                     v-show="props.github || props.externalLink"

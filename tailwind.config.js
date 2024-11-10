@@ -41,6 +41,26 @@ export default {
                 'dark-gradient-180': 'linear-gradient(180deg, #3B1D77 0%, #3154C9 100%)',
                 'dark-social-card': 'linear-gradient(360deg, #3154C9 -100%, #3B1D77 100%)',
             },
+            animation: {
+                'hyper-pulse': 'hyper-pulse 0.75s ease-in-out infinite',
+            },
+            keyframes: {
+                'hyper-pulse': {
+                    '0%': {
+                        transform: 'scale(1)',
+                        opacity: '1',
+                    },
+                    '50%': {
+                        transform: 'scale(1.05)',
+                        opacity: '0.8',
+                    },
+                    '100%': {
+                        transform: 'scale(1)',
+                        opacity: '1',
+                    },
+                },
+            },
+
             dropShadow: {
                 'light-shadow': '-2px 2px 4px 0px rgba(7 12 29 / 0.25)',
                 'dark-shadow': '-2px 2px 4px 0px rgba(226, 231, 248, 0.25)',

@@ -3,13 +3,11 @@ import { onMounted, watch } from 'vue';
 import { useDark } from '@vueuse/core';
 import HomeSection from './views/HomeSection.vue';
 import NavBar from './components/NavBar.vue';
-// import ProjectsView from './views/ProjectsView.vue';
-// import SkillsView from './views/SkillsView.vue';
-// import ContactView from './views/ContactView.vue';
-// import FooterComponent from './components/FooterComponent.vue';
 import SocialSection from './views/SocialSection.vue';
 import AboutMeSection from './views/AboutMeSection.vue';
 import ProjectsSection from './views/ProjectsSection.vue';
+import SkillSection from './views/SkillsSecion.vue';
+import ContactSection from './views/ContactSection.vue';
 
 const isDark = useDark();
 
@@ -41,9 +39,8 @@ onMounted(() => {
                 <AboutMeSection />
                 <SocialSection />
                 <ProjectsSection />
-                <!-- <SkillsView />
-                <ContactView />
-                <FooterComponent /> -->
+                <SkillSection />
+                <ContactSection />
             </div>
         </div>
     </div>

@@ -1,38 +1,19 @@
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps } from 'vue';
 
 const props = defineProps({
-  skill: String
-})
+    skill: String,
+});
 </script>
 
 <template>
-  <div class="skill-card cursor-pointer">
-    <p>{{ props.skill }}</p>
-  </div>
+    <div
+        class="flex-center bg-light-primary dark:bg-dark-primary py-1 px-2 rounded-lg cursor-pointer group hover:scale-105 transition-all ease-in-out"
+    >
+        <p class="font-Poppins text-2xl font-normal group-hover:animate-hyper-pulse">
+            {{ props.skill }}
+        </p>
+    </div>
 </template>
 
-<style>
-.skill-card {
-  padding: 5px;
-  background: #e0def7;
-  border-radius: 10px;
-  width: max-content;
-  font-weight: 400;
-  transition: all 0.1s ease;
-  font-size: 1.5em;
-}
-
-.skill-card:hover {
-  background: #d1cef3;
-  font-weight: 600;
-  transform: scale(1.1);
-}
-
-.skill-card p {
-  font-family: 'Open Sans';
-  font-style: normal;
-  color: #5349d4;
-  margin: 0px;
-}
-</style>
+<style></style>

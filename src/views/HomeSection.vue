@@ -18,7 +18,7 @@
                     >Terry Luciano</span
                 >
             </h1>
-            <h2 class="text-[32px]">Full-Stack Web Developer</h2>
+            <h2 class="text-[32px]">Full-Stack Developer</h2>
         </div>
     </div>
 </template>

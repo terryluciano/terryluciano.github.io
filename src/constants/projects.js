@@ -1,6 +1,7 @@
 import rustyLootImg from '@/assets/projects/rustyloot.png';
 import quetzilImg from '@/assets/projects/quetzil.png';
 import dashboardImg from '@/assets/projects/rlDashboard.png';
+import powerlinesImg from '@/assets/projects/powerlines.png';
 import jjiHeatImg from '@/assets/projects/jji-heat.png';
 import gammaBetsImg from '@/assets/projects/gammabets.png';
 
@@ -121,6 +122,29 @@ export const projects = [
             Techs.HTML,
             Techs.CSS,
         ],
+    },
+    {
+        projectImage: powerlinesImg,
+        projectName: 'Powerlines',
+        companyName: 'Powerlines (Non-Profit Organization)',
+        yearStart: 2023,
+        monthStart: 'July',
+        yearEnd: 2023,
+        monthEnd: 'October',
+        position: 'Full-Stack Developer',
+        description:
+            'PowerLines is an organization dedicated to modernizing the utility regulatory system by focusing on people, policy, and process to ensure public utilities commissions advance the public interest, update outdated regulations, and enhance public participation. In the early planning stages, my brother and I assembled a team to create mockups for the original designs and planned the application architecture. We developed both the front-end and back-end of the website, helping to launch the first version of the project.',
+        techStack: [
+            Techs.JavaScript,
+            Techs.Vue,
+            Techs.Python,
+            Techs.NodeJS,
+            Techs.Express,
+            Techs.PostgreSQL,
+            Techs.HTML,
+            Techs.CSS,
+        ],
+        externalLink: 'https://powerlines.org/',
     },
     {
         projectImage: jjiHeatImg,
