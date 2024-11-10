@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, reactive, ref, Transition } from 'vue';
+import { defineProps, reactive, ref } from 'vue';
 import { useDark } from '@vueuse/core';
 import LinkIcon from '@/components/icons/LinkIcon.vue';
 
