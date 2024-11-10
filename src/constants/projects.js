@@ -122,6 +122,7 @@ export const projects = [
             Techs.HTML,
             Techs.CSS,
         ],
+        externalLink: 'https://rustyloot.gg/',
     },
     {
         projectImage: powerlinesImg,
