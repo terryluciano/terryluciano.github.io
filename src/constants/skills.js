@@ -1,5 +1,5 @@
 export const Skills = Object.freeze({
-    backend: ['Node.js', 'Express.js', 'Drizzle ORM', 'Python', 'Go'],
+    backend: ['Node.js', 'Express.js', 'Python', 'Go'],
     frontend: [
         'React',
         'Solid.js',
@@ -15,8 +15,7 @@ export const Skills = Object.freeze({
         'Git',
         'Figma',
         'Socket.io',
-        'Zod',
-        'Vite',
+        'Drizzle ORM',
         'Cloudflare',
         'Digital Ocean',
         'Heroku',

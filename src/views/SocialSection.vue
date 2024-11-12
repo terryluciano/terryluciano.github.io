@@ -20,7 +20,10 @@ import githubProfileBg from '@/assets/githubProfile.png';
             >
                 <GithubIcon :height="64" />
             </SocialCard>
-            <SocialCard title="Resume">
+            <SocialCard
+                title="Resume"
+                link="https://drive.google.com/file/d/1FQpr_OEa2d782MHCi6RXhFF8I4dLt3Lm/view?usp=drive_link"
+            >
                 <ResumeIcon :height="64" />
             </SocialCard>
             <SocialCard
