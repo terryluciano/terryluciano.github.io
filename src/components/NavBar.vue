@@ -8,8 +8,12 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-    <nav class="relative w-full h-24 flex flex-row justify-center items-center">
-        <div class="flex flex-row justify-center items-center gap-6">
+    <nav
+        class="relative w-full sm:h-24 h-20 flex flex-row md:justify-center justify-between items-center px-4"
+    >
+        <div
+            class="flex flex-row justify-center items-center md:gap-6 sm:gap-4 gap-2 sm:text-base text-sm"
+        >
             <a href="#about-me">About Me</a>
             <a href="#socials">Socials</a>
             <a href="#skills">Skills</a>
@@ -17,10 +21,10 @@ const toggleDark = useToggle(isDark);
             <a href="#contact">Contact</a>
         </div>
         <div
-            class="absolute top-1/2 -translate-y-1/2 right-8 flex justify-center items-center z-10 cursor-pointer"
+            class="md:absolute md:top-1/2 md:-translate-y-1/2 md:right-8 flex justify-center items-center z-10 cursor-pointer"
         >
             <img
-                class="size-8"
+                class="sm:size-8 size-6"
                 :src="isDark ? lightModeIcon : darkModeIcon"
                 @click="toggleDark()"
             />

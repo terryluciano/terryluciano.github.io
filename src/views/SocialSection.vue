@@ -12,7 +12,7 @@ import githubProfileBg from '@/assets/githubProfile.png';
 
 <template>
     <SectionWrapper id="socials" title="Socials">
-        <div class="flex flex-row gap-6 w-full">
+        <div class="flex flex-row items-center justify-center md2:gap-6 xxs:gap-4 gap-2 w-full">
             <SocialCard
                 title="Github"
                 :bgImage="githubProfileBg"

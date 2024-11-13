@@ -10,7 +10,7 @@ const props = defineProps({
     <div
         class="flex-center bg-light-primary dark:bg-dark-primary py-1 px-2 rounded-lg cursor-pointer group hover:scale-105 transition-all ease-in-out"
     >
-        <p class="font-Poppins text-2xl font-normal group-hover:animate-hyper-pulse">
+        <p class="font-Poppins xs:text-2xl text-lg font-normal group-hover:animate-hyper-pulse">
             {{ props.skill }}
         </p>
     </div>

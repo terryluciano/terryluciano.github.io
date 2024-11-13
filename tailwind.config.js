@@ -4,6 +4,15 @@ export default {
     darkMode: 'class',
     theme: {
         screens: {
+            xxs: '420px',
+            xs: '500px',
+            sm: '640px',
+            md: '768px',
+            md2: '800px',
+            md3: '960px',
+            lg: '1024px',
+            xl: '1280px',
+            '2xl': '1536px',
             '3xl': '1700px',
             '4xl': '1920px',
         },

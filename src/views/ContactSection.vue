@@ -5,7 +5,7 @@ import SectionWrapper from '@/components/SectionWrapper.vue';
 <template>
     <SectionWrapper title="Contact" id="contact">
         <div class="w-full flex flex-col justify-center items-center gap-4">
-            <p class="font-Poppins text-xl font-normal text-center">
+            <p class="font-Poppins sm:text-xl text-base font-normal text-center">
                 Feel free to reach out at
                 <a class="underline" href="mailto:terryluciano1@gmail.com"
                     >terryluciano1@gmail.com</a
@@ -14,7 +14,7 @@ import SectionWrapper from '@/components/SectionWrapper.vue';
                 portfolio, and I hope you have a great day. I look forward to hearing from you soon!
             </p>
             <a
-                class="bg-light-primary dark:bg-dark-primary rounded font-Poppins font-medium text-2xl p-2"
+                class="bg-light-primary dark:bg-dark-primary rounded font-Poppins font-medium sm:text-2xl text-lg px-2 sm:py-2 py-1"
                 href="mailto:terryluciano1@gmail.com"
                 >Email Me!</a
             >

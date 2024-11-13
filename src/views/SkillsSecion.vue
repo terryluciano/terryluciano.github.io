@@ -16,7 +16,7 @@ Object.defineProperty(String.prototype, 'capitalize', {
 <template>
     <SectionWrapper title="Skills" id="skills">
         <div class="flex flex-row items-center gap-6 w-full">
-            <div class="flex flex-col gap-4 w-full">
+            <div class="flex flex-col xs:gap-4 gap-2 w-full">
                 <SkillContainer
                     v-for="(value, key) in Skills"
                     :key="key"
@@ -25,7 +25,7 @@ Object.defineProperty(String.prototype, 'capitalize', {
                 />
             </div>
 
-            <img id="skills-picture" class="w-full" :src="skillsSvg" />
+            <img id="skills-picture" class="xl:w-full w-[50%] md3:block hidden" :src="skillsSvg" />
         </div>
     </SectionWrapper>
 </template>

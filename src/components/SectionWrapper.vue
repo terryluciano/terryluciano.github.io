@@ -9,7 +9,10 @@ const props = defineProps({
 </script>
 
 <template>
-    <div :id="props.id" class="flex flex-col w-full h-auto items-center justify-start gap-12">
+    <div
+        :id="props.id"
+        class="flex flex-col w-full h-auto items-center justify-start md:gap-12 xs:gap-8 gap-6"
+    >
         <SectionHeader :title="props.title" />
         <slot></slot>
     </div>

@@ -29,7 +29,7 @@ const onClick = () => {
 
 <template>
     <div
-        class="relative flex-col flex-center gap-2 bg-light-social-card dark:bg-dark-social-card w-full h-64 rounded-lg text-light-text dark:text-dark-text overflow-hidden cursor-pointer group"
+        class="relative flex-col flex-center gap-2 bg-light-social-card dark:bg-dark-social-card w-full md:h-64 sm:h-48 xxs:h-32 h-24 rounded-lg text-light-text dark:text-dark-text overflow-hidden cursor-pointer group"
         @mouseover="onMouseOver"
         @mouseleave="onMouseLeave"
         @click="onClick"
@@ -40,7 +40,7 @@ const onClick = () => {
         />
 
         <div
-            class="relative size-[66px] transition-all duration-200 z-10 flex-center"
+            class="relative size-[66px] transition-all duration-200 z-10 xxs:flex hidden justify-center items-center"
             :class="{ 'group-hover:text-light-text': isDark }"
         >
             <Transition name="fade-icon">
@@ -50,7 +50,7 @@ const onClick = () => {
         </div>
 
         <p
-            class="font-Inter font-medium text-5xl z-10 transition-all duration-200"
+            class="font-Inter font-medium md:text-5xl sm:text-4xl xxs:text-2xl text-xl z-10 transition-all duration-200"
             :class="{ 'group-hover:text-light-text': isDark }"
         >
             {{ props.title }}

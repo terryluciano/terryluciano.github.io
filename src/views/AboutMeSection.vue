@@ -28,7 +28,11 @@ import aboutMeSvg from '../assets/about-me.svg';
                     Thanks for stopping by my portfolio, and I look forward to connecting with you!
                 </p>
             </div>
-            <img :src="aboutMeSvg" alt="about me illustration" class="h-64" />
+            <img
+                :src="aboutMeSvg"
+                alt="about me illustration"
+                class="md:block hidden flex-shrink-0 w-[336px]"
+            />
         </div>
     </SectionWrapper>
 </template>

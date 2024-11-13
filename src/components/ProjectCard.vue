@@ -33,8 +33,8 @@ watchEffect(() => {
 </script>
 
 <template>
-    <div class="flex flex-row gap-6 justify-start items-center w-full">
-        <div class="relative w-full max-w-[392px] h-[320px]">
+    <div class="flex md2:flex-row flex-col gap-6 justify-start items-center w-full">
+        <div class="md2:block hidden relative w-full max-w-[392px] h-[320px]">
             <div
                 class="z-[1] h-full w-[calc(100%-32px)] bg-light-primary dark:bg-dark-primary rounded-lg"
             />
@@ -43,6 +43,10 @@ watchEffect(() => {
                 :style="{ 'background-image': `url(${props.projectImage || defaultImage})` }"
             />
         </div>
+        <div
+            class="block md2:hidden aspect-video xs:h-64 xs:w-auto w-full bg-cover bg-center rounded-lg"
+            :style="{ 'background-image': `url(${props.projectImage || defaultImage})` }"
+        />
         <div class="flex flex-col gap-3 w-full">
             <!-- Project, company, and year -->
             <div class="flex flex-col gap-1">
@@ -67,7 +71,7 @@ watchEffect(() => {
             </div>
             <!-- Description -->
             <p class="font-Poppins">{{ props.description }}</p>
-            <div class="flex flex-row gap-2.5 justify-start items-center">
+            <div class="flex flex-row gap-2.5 justify-start items-center flex-wrap">
                 <img
                     v-for="imgSrc in imgArr"
                     :key="imgSrc"
