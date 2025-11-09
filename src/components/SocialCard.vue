@@ -6,13 +6,16 @@ import LinkIcon from '@/components/icons/LinkIcon.vue';
 const props = defineProps({
     title: String,
     link: String,
-    bgImage: String,
+    bgImage: {
+        type: String,
+        default: null,
+    },
 });
 
 const isDark = useDark();
 
 const cardBg = reactive({
-    backgroundImage: `url(${props.bgImage})`,
+    backgroundImage: props.bgImage ? `url(${props.bgImage})` : undefined,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
 });
@@ -35,12 +38,13 @@ const onClick = () => {
         @click="onClick"
     >
         <div
+            v-if="props.bgImage"
             class="absolute size-[104%] transition-all duration-200 ease-in-out top-[100%] group-hover:-top-[2%] -left-[2%] z-[1] group-hover:blur-sm"
             :style="cardBg"
         />
 
         <div
-            class="relative size-[66px] transition-all duration-200 z-10 xxs:flex hidden justify-center items-center"
+            class="relative size-[66px] transition-all duration-200 z-10 hidden xxs:flex justify-center items-center"
             :class="{ 'group-hover:text-light-text': isDark }"
         >
             <Transition name="fade-icon">

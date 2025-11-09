@@ -11,7 +11,7 @@ import githubProfileBg from '@/assets/githubProfile.png';
 </script>
 
 <template>
-    <SectionWrapper id="socials" title="Socials">
+    <SectionWrapper title="Socials" id="social">
         <div class="flex flex-row items-center justify-center md2:gap-6 xxs:gap-4 gap-2 w-full">
             <SocialCard
                 title="Github"
@@ -22,7 +22,7 @@ import githubProfileBg from '@/assets/githubProfile.png';
             </SocialCard>
             <SocialCard
                 title="Resume"
-                link="https://drive.google.com/file/d/1FQpr_OEa2d782MHCi6RXhFF8I4dLt3Lm/view?usp=drive_link"
+                link="https://drive.google.com/file/d/1-OEFc1f82D7bp_bbXaMYpWpxJZGoQ4zC/view?usp=sharing"
             >
                 <ResumeIcon :height="64" />
             </SocialCard>
@@ -36,3 +36,5 @@ import githubProfileBg from '@/assets/githubProfile.png';
         </div>
     </SectionWrapper>
 </template>
+
+<style></style>

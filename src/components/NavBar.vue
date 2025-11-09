@@ -15,7 +15,7 @@ const toggleDark = useToggle(isDark);
             class="flex flex-row justify-center items-center md:gap-6 sm:gap-4 gap-2 sm:text-base text-sm"
         >
             <a href="#about-me">About Me</a>
-            <a href="#socials">Socials</a>
+            <a href="#social">Socials</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>

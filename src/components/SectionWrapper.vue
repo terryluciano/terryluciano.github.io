@@ -2,18 +2,20 @@
 import SectionHeader from '../components/SectionHeader.vue';
 import { defineProps } from 'vue';
 
-const props = defineProps({
+const { id, title } = defineProps({
     title: String,
     id: String,
 });
+
+console.log(id);
 </script>
 
 <template>
     <div
-        :id="props.id"
+        :id="id"
         class="flex flex-col w-full h-auto items-center justify-start md:gap-12 xs:gap-8 gap-6"
     >
-        <SectionHeader :title="props.title" />
-        <slot></slot>
+        <SectionHeader :title="title" />
+        <slot />
     </div>
 </template>

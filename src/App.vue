@@ -30,18 +30,16 @@ onMounted(() => {
 
 <template>
     <div
-        class="transition-all duration-150 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center scroll-smooth overflow-x-hidden box-content w-screen"
+        class="transition-all duration-150 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-Poppins flex flex-col items-center scroll-smooth overflow-x-hidden box-content w-full"
     >
-        <NavBar />
+        <NavBar :section-ids="sectionIds" />
         <div class="flex flex-col items-center w-full h-full px-4 overflow-x-hidden">
             <HomeSection />
-            <div
-                class="flex flex-col 3xl:gap-40 md:gap-20 gap-10 w-full max-w-[1200px] py-12 overflow-x-hidden"
-            >
+            <div class="flex flex-col 3xl:gap-40 md:gap-20 gap-10 w-full max-w-[1200px] py-12">
                 <AboutMeSection />
                 <SocialSection />
-                <ProjectsSection />
                 <SkillSection />
+                <ProjectsSection />
                 <ContactSection />
             </div>
         </div>
@@ -49,15 +47,12 @@ onMounted(() => {
 </template>
 
 <style>
-#app {
+body,
+html {
     width: 100vw;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-body {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
 }
 </style>
