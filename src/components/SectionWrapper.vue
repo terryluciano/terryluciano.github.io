@@ -6,8 +6,6 @@ const { id, title } = defineProps({
     title: String,
     id: String,
 });
-
-console.log(id);
 </script>
 
 <template>
